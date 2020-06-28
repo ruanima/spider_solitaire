@@ -48,7 +48,7 @@ imageDict = {}   # hang on to images, or they may disappear!
 
 class View:
     '''
-    Cards are represented as canvas image iitems,  displaying either the face
+    Cards are represented as canvas image items,  displaying either the face
     or the back as appropriate.  Each card has the tag "card".  This is
     crucial, since only canvas items tagged "card" will respond to mouse
     clicks.

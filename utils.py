@@ -24,16 +24,16 @@ class ScrolledList(tk.Frame):
 
     def makeWidgets(self, items, **kwargs):
         sbar = tk.Scrollbar(self)
-        list = tk.Listbox(self, **kwargs)
-        list.configure(**kwargs)
-        sbar.configure(command=list.yview)
-        list.configure(yscrollcommand=sbar.set)
+        li = tk.Listbox(self, **kwargs)
+        li.configure(**kwargs)
+        sbar.configure(command=li.yview)
+        li.configure(yscrollcommand=sbar.set)
         sbar.pack(side=tk.RIGHT, fill=tk.Y)
-        list.pack(side=tk.LEFT, expand=tk.YES, fill=tk.BOTH)
-        list.insert(0, *items)
-        list.config(selectmode=tk.SINGLE, setgrid=1)
-        list.bind('<Double-1>', self.handleList)
-        self.listbox = list
+        li.pack(side=tk.LEFT, expand=tk.YES, fill=tk.BOTH)
+        li.insert(0, *items)
+        li.config(selectmode=tk.SINGLE, setgrid=1)
+        li.bind('<Double-1>', self.handleList)
+        self.listbox = li
 
     def runCommand(self, selection):
         # override me
