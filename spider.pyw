@@ -194,8 +194,8 @@ class Spider:
         model.save(saveFile)
 
     def load(self):
+        dataDir = os.path.join(os.path.dirname(sys.argv[0]), 'data')
         try:
-            dataDir = os.path.join(os.path.dirname(sys.argv[0]), 'data')
             filename = LoadFileDialog(
                 self.view.root, dataDir, bg='lemonChiffon').go()
             if filename:
